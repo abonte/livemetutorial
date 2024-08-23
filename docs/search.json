@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "LiveMe tutorial",
     "section": "",
-    "text": "This tutorial will guide you through the deployment of the LiveMe catalog and the upload of the metadata of the datasets generated during the course. The steps are run through the Github website, but if you know git commands, you can perform them through the command line."
+    "text": "This tutorial will guide you through the deployment of the LiveMe catalog and the upload of the metadata of the datasets generated during the course. The steps are run through the Github website, but if you know git commands, you can perform them through the command line. See a demo of the catalog."
   },
   {
     "objectID": "index.html#introduction-to-liveme",
