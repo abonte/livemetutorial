@@ -177,12 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This tutorial will guide you through the deployment of the LiveMe catalog and the upload of the metadata of the datasets generated during the course. The steps are run through the Github website, but if you know git commands, you can perform them through the command line. See a <a href="https://abonte.github.io/liveme/">demo of the catalog</a>.</p>
 <section id="introduction-to-liveme" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction-to-liveme"><span class="header-section-number">1</span> Introduction to LiveMe</h2>
-<p>The LiveMe data catalog is a light-weight static website based on <a href="https://jkan.io/">jkan.io</a>. The website runs on GitHub Pages. JKAN is a tool for making open data websites. In this couse, only the metada will be uploaded. The actual data are kept on the student device. JKAN is backend-free and the business logic, maintained in the reference Github repository, is developed in <em>node js</em> and is executed directly from the repository as Github pages. Once the reference github repository is set up, the catalog can go online immediately. It is accessible through the link provided by its github webpage. The development and maintenance of the catalog can be done completely on the repository, all the modifications performed there will be directly available online on the webpage. Being based on Github, the JKAN catalog can be updated only by users who have access to the relative repository.</p>
+<p>The LiveMe data catalog is a light-weight static website based on <a href="https://jkan.io/">jkan.io</a>. The website runs on GitHub Pages. JKAN is a tool for making open data websites. In this couse, only the metadata will be uploaded. The actual data is kept on the student’s device. JKAN is backend-free and the business logic, maintained in the reference Github repository, is developed in <em>node js</em> and is executed directly from the repository as Github pages. Once the reference Github repository is set up, the catalog can go online immediately. It is accessible through the link provided by its github webpage. The development and maintenance of the catalog can be done completely on the repository, all the modifications performed there will be directly available online on the webpage. Being based on Github, the JKAN catalog can be updated only by users who have access to the relative repository.</p>
 </section>
 <section id="getting-started" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">2</span> Getting started</h2>
+<p>Prerequisites:</p>
 <ol type="1">
-<li><p>Create a new LiveMe catalog by creating it from the <a href="https://github.com/new?template_name=jkan&amp;template_owner=datascientiafoundation">template</a>.</p>
+<li><p>Create a new LiveMe catalog from the catalog <a href="https://github.com/new?template_name=jkan&amp;template_owner=datascientiafoundation">template</a>.</p>
 <p>Provide a <strong>Repository Name</strong> (in the rest of this tutorial we assume the name is <code>liveme</code>), and then <strong>Create Repository</strong>.</p>
 <p><img src="imgs/use_template.png" class="img-fluid"></p></li>
 <li><p>Once your repository is created, update the website configuration file with your information.</p>
@@ -207,9 +208,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="repository-structure" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="repository-structure"><span class="header-section-number">3</span> Repository structure</h2>
-<p>In this section, we describe the structure of the JKAN template repository that Datascientia provides to set up a new catalog. Below we describe the most important elements for the course.</p>
+<p>In this section, we describe the structure of the JKAN template repository that Datascientia provides to set up a new catalog. Below, we describe the most important elements for the course.</p>
 <ul>
-<li><code>_data</code> : this directory contain the yml configuration files used to define the metadata of the resources handled by the catalog (within the “schemas” directory), as well as the categories that can be used to categorize the resources in the catalogs, and the custom services which can accessed to the catalog.</li>
+<li><code>_data</code> : this directory contains the yml configuration files used to define the metadata of the resources handled by the catalog (within the “schemas” directory), as well as the categories that can be used to categorize the resources in the catalogs, and the customs services which can accessed to the catalog.</li>
 <li><code>_datasets</code> : this directory stores the markdown file describing (following a precise metadata schema) each dataset uploaded in the catalog.</li>
 <li><code>_organizations</code> : similar to the <code>_datasets</code> directory, this one contains the markdown files defining the organization that have uploaded (the owner usually) datasets in the catalog.</li>
 <li><code>_config.yml</code> : this is the main config file of the JAKN catalog.</li>
@@ -226,12 +227,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="sec-add-organization" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="sec-add-organization"><span class="header-section-number">4</span> Add a new organization (you)</h2>
-<p>The organization is the individual or the entity that have uploaded (the owner usually) datasets in the catalog. In LiveMe, the owner uploading the data is the owner of the personal catalog.</p>
+<p>The organization is the individual or the entity that has uploaded (the owner usually) datasets in the catalog. In LiveMe, the owner uploading the data is the owner of the personal catalog.</p>
 <p>To add yourself as an organization in the catalog follow these steps.</p>
 <ol type="1">
 <li><p>Create a new file named <code>&lt;YOUR_NAME&gt;.md</code> inside the <code>_organization</code> folder in the repository.</p>
 <p><img src="imgs/organization.png" class="img-fluid"></p></li>
-<li><p>Paste the following text and change with your information.</p>
+<li><p>Paste the following text and change it with your information.</p>
 <div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">schema</span><span class="kw">:</span><span class="at"> default</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt;</span></span>
@@ -240,10 +241,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="1">Make sure that the value maches the filename</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="1">Make sure that the value matches the filename.</span>
 </dd>
 </dl></li>
-<li><p>After few seconds, the created organization is visible on the website. All dataset metadata that you will upload will belog to this organization.</p></li>
+<li><p>After a few seconds, the created organization is visible on the website. All dataset metadata that you upload will belog to this organization.</p></li>
 </ol>
 </section>
 <section id="add-a-new-dataset-metadata" class="level2" data-number="5">
@@ -301,11 +302,11 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Indentation matter, be sure respect the structure!</p>
+<p>Indentation matter; be sure to respect the structure!</p>
 </div>
 </div>
 <ol start="3" type="1">
-<li>After few seconds, the dataset is visible on the website.</li>
+<li>After a few seconds, the dataset is visible on the website.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
