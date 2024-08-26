@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#repository-structure" id="toc-repository-structure" class="nav-link" data-scroll-target="#repository-structure"><span class="header-section-number">3</span> Repository structure</a></li>
   <li><a href="#sec-add-organization" id="toc-sec-add-organization" class="nav-link" data-scroll-target="#sec-add-organization"><span class="header-section-number">4</span> Add a new organization (you)</a></li>
   <li><a href="#add-a-new-dataset-metadata" id="toc-add-a-new-dataset-metadata" class="nav-link" data-scroll-target="#add-a-new-dataset-metadata"><span class="header-section-number">5</span> Add a new dataset metadata</a></li>
-  <li><a href="#add-your-liveme-catalog-link-to-your-community-profile" id="toc-add-your-liveme-catalog-link-to-your-community-profile" class="nav-link" data-scroll-target="#add-your-liveme-catalog-link-to-your-community-profile"><span class="header-section-number">6</span> Add your LiveMe catalog link to your community profile</a></li>
+  <li><a href="#add-your-liveme-catalog-link-to-your-community-profile-optional" id="toc-add-your-liveme-catalog-link-to-your-community-profile-optional" class="nav-link" data-scroll-target="#add-your-liveme-catalog-link-to-your-community-profile-optional"><span class="header-section-number">6</span> Add your LiveMe catalog link to your community profile (optional)</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7</span> References</a></li>
   </ul>
 </nav>
@@ -227,21 +227,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="sec-add-organization" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="sec-add-organization"><span class="header-section-number">4</span> Add a new organization (you)</h2>
-<p>The organization is the individual or the entity that has uploaded (the owner usually) datasets in the catalog. In LiveMe, the owner uploading the data is the owner of the personal catalog.</p>
+<p>The organization is the individual or the entity (the owner usually) that has uploaded datasets in the catalog. In LiveMe, the organization uploading the data is the owner of the personal catalog.</p>
 <p>To add yourself as an organization in the catalog follow these steps.</p>
 <ol type="1">
 <li><p>Create a new file named <code>&lt;YOUR_NAME&gt;.md</code> inside the <code>_organization</code> folder in the repository.</p>
 <p><img src="imgs/organization.png" class="img-fluid"></p></li>
 <li><p>Paste the following text and change it with your information.</p>
-<div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">schema</span><span class="kw">:</span><span class="at"> default</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt;</span></span>
-<span id="annotated-cell-2-4"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt; is a student of the Studies on Human Behavior course of the University of Trento.</span></span>
-<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">schema</span><span class="kw">:</span><span class="at"> default</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt;</span></span>
+<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt; is a student of the Studies on Human Behavior course of the University of Trento.</span></span>
+<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="1">Make sure that the value matches the filename.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">Make sure that the value matches the filename.</span>
 </dd>
 </dl></li>
 <li><p>After a few seconds, the created organization is visible on the website. All dataset metadata that you upload will belog to this organization.</p></li>
@@ -266,29 +266,29 @@ Important
 <ol type="1">
 <li><p>Create a new file named <code>&lt;DATASET_NAME&gt;.md</code> inside the <code>_datasets</code> folder in the repository (similarly to <a href="#sec-add-organization" class="quarto-xref">Section&nbsp;4</a>).</p></li>
 <li><p>Paste the following text and change with your information.</p>
-<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">schema</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="annotated-cell-3-3"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> First dataset</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">organization</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt;</span></span>
-<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">notes</span><span class="kw">:</span><span class="at"> This is my first dataset on my new JKAN catalog</span></span>
-<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">resources</span><span class="kw">:</span></span>
-<span id="annotated-cell-3-7"><a href="#annotated-cell-3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Air Monitoring Stations CSV</span></span>
-<span id="annotated-cell-3-8"><a href="#annotated-cell-3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">        url</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9" aria-hidden="true" tabindex="-1"></a>            http://data.phl.opendata.arcgis.com/datasets/1839b35258604422b0b520cbb668df0d_0.csv</span>
-<span id="annotated-cell-3-10"><a href="#annotated-cell-3-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">format</span><span class="kw">:</span><span class="at"> csv</span></span>
-<span id="annotated-cell-3-11"><a href="#annotated-cell-3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span><span class="kw">:</span><span class="at"> </span><span class="st">'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/'</span></span>
-<span id="annotated-cell-3-12"><a href="#annotated-cell-3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">category</span><span class="kw">:</span></span>
-<span id="annotated-cell-3-13"><a href="#annotated-cell-3-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> Personal data</span></span>
-<span id="annotated-cell-3-14"><a href="#annotated-cell-3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span></span>
-<span id="annotated-cell-3-15"><a href="#annotated-cell-3-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> Documentation</span></span>
-<span id="annotated-cell-3-16"><a href="#annotated-cell-3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">maintainer</span><span class="kw">:</span><span class="at"> Tim Wisniewski</span></span>
-<span id="annotated-cell-3-17"><a href="#annotated-cell-3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">maintainer_email</span><span class="kw">:</span><span class="at"> tim@timwis.com</span></span>
-<span id="annotated-cell-3-18"><a href="#annotated-cell-3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> parquet</span></span>
-<span id="annotated-cell-3-19"><a href="#annotated-cell-3-19" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">schema</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> First dataset</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">organization</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt;</span></span>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">notes</span><span class="kw">:</span><span class="at"> This is my first dataset on my new JKAN catalog</span></span>
+<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">resources</span><span class="kw">:</span></span>
+<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Air Monitoring Stations CSV</span></span>
+<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">        url</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="annotated-cell-4-9"><a href="#annotated-cell-4-9" aria-hidden="true" tabindex="-1"></a>            http://data.phl.opendata.arcgis.com/datasets/1839b35258604422b0b520cbb668df0d_0.csv</span>
+<span id="annotated-cell-4-10"><a href="#annotated-cell-4-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">format</span><span class="kw">:</span><span class="at"> csv</span></span>
+<span id="annotated-cell-4-11"><a href="#annotated-cell-4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span><span class="kw">:</span><span class="at"> </span><span class="st">'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/'</span></span>
+<span id="annotated-cell-4-12"><a href="#annotated-cell-4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">category</span><span class="kw">:</span></span>
+<span id="annotated-cell-4-13"><a href="#annotated-cell-4-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> Personal data</span></span>
+<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span></span>
+<span id="annotated-cell-4-15"><a href="#annotated-cell-4-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> Documentation</span></span>
+<span id="annotated-cell-4-16"><a href="#annotated-cell-4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">maintainer</span><span class="kw">:</span><span class="at"> Tim Wisniewski</span></span>
+<span id="annotated-cell-4-17"><a href="#annotated-cell-4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">maintainer_email</span><span class="kw">:</span><span class="at"> tim@timwis.com</span></span>
+<span id="annotated-cell-4-18"><a href="#annotated-cell-4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> parquet</span></span>
+<span id="annotated-cell-4-19"><a href="#annotated-cell-4-19" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="1">Make sure that the organization name matches the name you defined in <a href="#sec-add-organization" class="quarto-xref">Section&nbsp;4</a>.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="1">Make sure that the organization name matches the name you defined in <a href="#sec-add-organization" class="quarto-xref">Section&nbsp;4</a>.</span>
 </dd>
 </dl></li>
 </ol>
@@ -324,14 +324,40 @@ Note
 </div>
 </div>
 </section>
-<section id="add-your-liveme-catalog-link-to-your-community-profile" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="add-your-liveme-catalog-link-to-your-community-profile"><span class="header-section-number">6</span> Add your LiveMe catalog link to your community profile</h2>
-<p>TODO</p>
+<section id="add-your-liveme-catalog-link-to-your-community-profile-optional" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="add-your-liveme-catalog-link-to-your-community-profile-optional"><span class="header-section-number">6</span> Add your LiveMe catalog link to your community profile (optional)</h2>
+<ol type="1">
+<li>Log in to your <a href="https://ds.datascientia.eu/community/welcome">Datascientia profile</a></li>
+<li>Navigate to <strong>Profile settings</strong> on the left side bar and update the <strong>Profile Bio</strong> in the <strong>Manage profile</strong> tab by appending the following text:</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>My personal Data Catalog</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>- LiveMe https://github.com/&lt;GITHUB_USERNAME&gt;/liveme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can also format <strong>LiveMe</strong> as a link.</p>
+<p><img src="imgs/adding_removing_catalog_links_in_user_profile.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Your changes will be then visible in the <strong>About</strong> section of your public profile.</li>
+</ol>
+<p><img src="imgs/link_personal_profile.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not add link or information that you do not wish to share publicly.</p>
+</div>
+</div>
 </section>
 <section id="references" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="references"><span class="header-section-number">7</span> References</h2>
 <ul>
 <li><a href="https://datascientiafoundation.github.io/LiveData/build_catalog/">DS Catalog: Development and Maintenance</a></li>
+<li><a href="https://ds.datascientia.eu/community/public/your-public-portfolio">Personal Datascientia Public Portfolio</a></li>
+<li><a href="https://ds.datascientia.eu/community/public/delete-my-account">Delete your Datascientia account</a></li>
 </ul>
 
 

@@ -39,7 +39,7 @@
     "href": "index.html#sec-add-organization",
     "title": "LiveMe tutorial",
     "section": "4 Add a new organization (you)",
-    "text": "4 Add a new organization (you)\nThe organization is the individual or the entity that has uploaded (the owner usually) datasets in the catalog. In LiveMe, the owner uploading the data is the owner of the personal catalog.\nTo add yourself as an organization in the catalog follow these steps.\n\nCreate a new file named &lt;YOUR_NAME&gt;.md inside the _organization folder in the repository.\n\nPaste the following text and change it with your information.\n---\nschema: default\n1title: &lt;YOUR_NAME&gt;\ndescription: &lt;YOUR_NAME&gt; is a student of the Studies on Human Behavior course of the University of Trento.\n---\n\n1\n\nMake sure that the value matches the filename.\n\n\nAfter a few seconds, the created organization is visible on the website. All dataset metadata that you upload will belog to this organization."
+    "text": "4 Add a new organization (you)\nThe organization is the individual or the entity (the owner usually) that has uploaded datasets in the catalog. In LiveMe, the organization uploading the data is the owner of the personal catalog.\nTo add yourself as an organization in the catalog follow these steps.\n\nCreate a new file named &lt;YOUR_NAME&gt;.md inside the _organization folder in the repository.\n\nPaste the following text and change it with your information.\n---\nschema: default\n1title: &lt;YOUR_NAME&gt;\ndescription: &lt;YOUR_NAME&gt; is a student of the Studies on Human Behavior course of the University of Trento.\n---\n\n1\n\nMake sure that the value matches the filename.\n\n\nAfter a few seconds, the created organization is visible on the website. All dataset metadata that you upload will belog to this organization."
   },
   {
     "objectID": "index.html#add-a-new-dataset-metadata",
@@ -49,17 +49,17 @@
     "text": "5 Add a new dataset metadata\n\n\n\n\n\n\nImportant\n\n\n\nDo not upload the actual data (sensor data or answer to the questions) in the catalog repository. This data must be kept on your device and the provided storage.\n\n\nTo a new dataset, you need to create a new markdown file containing the metadata that describe the dataset. The metadata follows a defined schema (see _data/schemas/default.yml).\n\nCreate a new file named &lt;DATASET_NAME&gt;.md inside the _datasets folder in the repository (similarly to Section 4).\nPaste the following text and change with your information.\n---\nschema: default\ntitle: First dataset\n1organization: &lt;YOUR_NAME&gt;\nnotes: This is my first dataset on my new JKAN catalog\nresources:\n    - name: Air Monitoring Stations CSV\n        url: &gt;-\n            http://data.phl.opendata.arcgis.com/datasets/1839b35258604422b0b520cbb668df0d_0.csv\n        format: csv\nlicense: 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/'\ncategory:\n    - Personal data\ntype:\n    - Documentation\nmaintainer: Tim Wisniewski\nmaintainer_email: tim@timwis.com\ntags: parquet\n---\n\n1\n\nMake sure that the organization name matches the name you defined in Section 4.\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nIndentation matter; be sure to respect the structure!\n\n\n\nAfter a few seconds, the dataset is visible on the website.\n\n\n\n\n\n\n\nNote\n\n\n\nThe data processing pipeline on your personal data automatically generate these files in the todo FOLDER. You just need to add them in the _datasets folder.\nTo peform a bulk upload, select Upload files inside the _datasets folder and follow the instructions."
   },
   {
-    "objectID": "index.html#add-your-liveme-catalog-link-to-your-community-profile",
-    "href": "index.html#add-your-liveme-catalog-link-to-your-community-profile",
+    "objectID": "index.html#add-your-liveme-catalog-link-to-your-community-profile-optional",
+    "href": "index.html#add-your-liveme-catalog-link-to-your-community-profile-optional",
     "title": "LiveMe tutorial",
-    "section": "6 Add your LiveMe catalog link to your community profile",
-    "text": "6 Add your LiveMe catalog link to your community profile\nTODO"
+    "section": "6 Add your LiveMe catalog link to your community profile (optional)",
+    "text": "6 Add your LiveMe catalog link to your community profile (optional)\n\nLog in to your Datascientia profile\nNavigate to Profile settings on the left side bar and update the Profile Bio in the Manage profile tab by appending the following text:\n\nMy personal Data Catalog\n- LiveMe https://github.com/&lt;GITHUB_USERNAME&gt;/liveme\nYou can also format LiveMe as a link.\n\n\nYour changes will be then visible in the About section of your public profile.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not add link or information that you do not wish to share publicly."
   },
   {
     "objectID": "index.html#references",
     "href": "index.html#references",
     "title": "LiveMe tutorial",
     "section": "7 References",
-    "text": "7 References\n\nDS Catalog: Development and Maintenance"
+    "text": "7 References\n\nDS Catalog: Development and Maintenance\nPersonal Datascientia Public Portfolio\nDelete your Datascientia account"
   }
 ]
