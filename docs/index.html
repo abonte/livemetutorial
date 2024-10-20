@@ -142,17 +142,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link active" data-scroll-target="#data-preparation"><span class="header-section-number">1</span> Data preparation</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link active" data-scroll-target="#data-preparation"><span class="header-section-number">1</span> Data preparation</a>
+  <ul class="collapse">
+  <li><a href="#setup-the-coding-environment" id="toc-setup-the-coding-environment" class="nav-link" data-scroll-target="#setup-the-coding-environment"><span class="header-section-number">1.1</span> Setup the coding environment</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.2</span> References</a></li>
+  </ul></li>
   <li><a href="#liveme" id="toc-liveme" class="nav-link" data-scroll-target="#liveme"><span class="header-section-number">2</span> LiveMe</a>
   <ul class="collapse">
   <li><a href="#introduction-to-liveme" id="toc-introduction-to-liveme" class="nav-link" data-scroll-target="#introduction-to-liveme"><span class="header-section-number">2.1</span> Introduction to LiveMe</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><span class="header-section-number">2.2</span> Getting started</a></li>
   <li><a href="#repository-structure" id="toc-repository-structure" class="nav-link" data-scroll-target="#repository-structure"><span class="header-section-number">2.3</span> Repository structure</a></li>
   <li><a href="#sec-add-organization" id="toc-sec-add-organization" class="nav-link" data-scroll-target="#sec-add-organization"><span class="header-section-number">2.4</span> Add a new organization (you)</a></li>
-  <li><a href="#add-a-new-dataset-metadata" id="toc-add-a-new-dataset-metadata" class="nav-link" data-scroll-target="#add-a-new-dataset-metadata"><span class="header-section-number">2.5</span> Add a new dataset metadata</a></li>
-  <li><a href="#add-your-liveme-catalog-link-to-your-community-profile-optional" id="toc-add-your-liveme-catalog-link-to-your-community-profile-optional" class="nav-link" data-scroll-target="#add-your-liveme-catalog-link-to-your-community-profile-optional"><span class="header-section-number">2.6</span> Add your LiveMe catalog link to your community profile (optional)</a></li>
+  <li><a href="#add-manually-a-new-dataset-metadata" id="toc-add-manually-a-new-dataset-metadata" class="nav-link" data-scroll-target="#add-manually-a-new-dataset-metadata"><span class="header-section-number">2.5</span> Add manually a new dataset metadata</a></li>
+  <li><a href="#add-new-datasets-metadata-and-codebooks-a-the-end-of-the-data-preparation-pipeline" id="toc-add-new-datasets-metadata-and-codebooks-a-the-end-of-the-data-preparation-pipeline" class="nav-link" data-scroll-target="#add-new-datasets-metadata-and-codebooks-a-the-end-of-the-data-preparation-pipeline"><span class="header-section-number">2.6</span> Add new datasets metadata and codebooks a the end of the data preparation pipeline</a></li>
+  <li><a href="#references-1" id="toc-references-1" class="nav-link" data-scroll-target="#references-1"><span class="header-section-number">2.7</span> References</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -180,21 +184,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="data-preparation" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="data-preparation"><span class="header-section-number">1</span> Data preparation</h2>
-<p>TBD</p>
+<section id="setup-the-coding-environment" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="setup-the-coding-environment"><span class="header-section-number">1.1</span> Setup the coding environment</h3>
+<p>Follow these steps to set up the environment where to execute the data preparation code on your data.</p>
+<ol type="1">
+<li><p>The code is run inside a Docker container. A container includes all the dependencies needed to run the code (see <a href="https://www.docker.com/resources/what-container/">what is a container</a>). To get started, install Docker on you machine by downloading <a href="https://www.docker.com/">Docker Desktop</a>.</p></li>
+<li><p>Download the code following the instruction provided via email by the instructor.</p></li>
+<li><p>Download the sensor folders inside <code>&lt;PATH-TO-YOUR-FOLDER-CODE&gt;/experiments/shb/dump</code>. The expected folder structure should be as follow:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> src/                         <span class="co"># Contains the source code</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> experiments/                 <span class="co"># Contains experiment data and configurations</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── shb/                     <span class="co"># Experiment name e.g., shb</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── dump/</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>           <span class="ex">├──</span> activities/</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>           <span class="ex">├──</span> batterylevel/</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>           <span class="bu">.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>           <span class="bu">.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>           <span class="bu">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>start the container. If you are using Windows, follow <a href="https://docs.docker.com/guides/jupyter/">Data science with JupyterLab</a>. Here are reported the main steps for Mac/Linux (the linked guide provides instructions for Windows) using the command line (the same steps can be performed from the Docker Desktop interface):</p>
+<ul>
+<li><p>open a terminal and change the directory to where the code is (i.e., <code>cd &lt;PATH-TO-YOUR-FOLDER-CODE&gt;</code>)</p></li>
+<li><p>run the following commnand</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-p</span> 8889:8888 <span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">-v</span> <span class="st">"</span><span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span><span class="st">:/home/jovyan/work"</span> <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                quay.io/jupyter/base-notebook start-notebook.py <span class="at">--NotebookApp.token</span><span class="op">=</span><span class="st">'my-token'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>access the Jupyter Lab website at http://localhost:8889/lab?token=my-token</p></li>
+</ul></li>
+<li><p>open the notebook named <code>shb.ipynb</code> in the project root</p></li>
+<li><p>Follow the steps inside the notebook to execute the data preparation pipeline. (<a href="https://realpython.com/jupyter-notebook-introduction/">introduction on Jupyter notebooks</a>)</p></li>
+</ol>
+</section>
+<section id="references" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="references"><span class="header-section-number">1.2</span> References</h3>
+<p><a href="https://www.tadviewer.com/">Tool to view parquet data</a></p>
+</section>
 </section>
 <section id="liveme" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="liveme"><span class="header-section-number">2</span> LiveMe</h2>
 <p>This tutorial will guide you through the deployment of the LiveMe catalog and the upload of the metadata of the datasets generated during the course. The steps are run through the Github website, but if you know git commands, you can perform them through the command line. Alternatively to <a href="https://pages.github.com/">Github pages</a>, you can use other software repositories like <a href="https://codeberg.page/">Codeberg</a> and <a href="https://docs.gitlab.com/ee/user/project/pages/">Gitlab</a>. In that case, you can follow the same steps. See a <a href="https://datascientiafoundation.github.io/liveme/">demo of the catalog</a>.</p>
 <section id="introduction-to-liveme" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="introduction-to-liveme"><span class="header-section-number">2.1</span> Introduction to LiveMe</h3>
-<p>The LiveMe data catalog is a light-weight static website based on <a href="https://jkan.io/">jkan.io</a>. The website runs on GitHub Pages. JKAN is a tool for making open data websites. In this couse, only the metadata will be uploaded. The actual data is kept on the student’s device. JKAN is backend-free and the business logic, maintained in the reference Github repository, is developed in <em>node js</em> and is executed directly from the repository as Github pages. Once the reference Github repository is set up, the catalog can go online immediately. It is accessible through the link provided by its github webpage. The development and maintenance of the catalog can be done completely on the repository, all the modifications performed there will be directly available online on the webpage. Being based on Github, the JKAN catalog can be updated only by users who have access to the relative repository.</p>
+<p>The LiveMe data catalog is a lightweight static website based on <a href="https://jkan.io/">jkan.io</a>. The website runs on GitHub Pages. JKAN is a tool for making open data websites. In this couse, only the metadata will be uploaded. The actual data is kept on the student’s device. JKAN is backend-free and the business logic, maintained in the reference Github repository, is developed in <em>node js</em> and is executed directly from the repository as Github pages. Once the reference Github repository is set up, the catalog can go online immediately. It is accessible through the link provided by its github webpage. The development and maintenance of the catalog can be done entirely on the repository, all the modifications performed there will be directly available online on the webpage. Being based on Github, the JKAN catalog can be updated only by users who have access to the repository.</p>
 </section>
 <section id="getting-started" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">2.2</span> Getting started</h3>
 <p>Prerequisites:</p>
 <ol type="1">
 <li><p>Create a new LiveMe catalog from the catalog <a href="https://github.com/datascientiafoundation/liveme">template</a>.</p>
-<p>Provide a <strong>Repository Name</strong> (in the rest of this tutorial we assume the name is <code>liveme</code>), and then <strong>Create Repository</strong>.</p>
+<p>Provide a <strong>Repository Name</strong> (in the rest of this tutorial, we assume the name is <code>liveme</code>), and then <strong>Create Repository</strong>.</p>
 <p><img src="imgs/use_template.png" class="img-fluid"></p></li>
 <li><p>Once your repository is created, update the website configuration file with your information.</p>
 <ul>
@@ -205,10 +242,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Change the value of the following properties like in the example below:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> LiveMe</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">greeting</span><span class="kw">:</span><span class="at"> LiveMe Catalog of &lt;YOUR_NAME&gt; </span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> Personal data catalog of &lt;YOUR_NAME&gt;.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">baseurl</span><span class="kw">:</span><span class="at"> /liveme</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> LiveMe</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">greeting</span><span class="kw">:</span><span class="at"> LiveMe Catalog of &lt;YOUR_NAME&gt; </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> Personal data catalog of &lt;YOUR_NAME&gt;.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">baseurl</span><span class="kw">:</span><span class="at"> /liveme</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Click the <strong>Commit changes</strong> button to save the configuration (it might take few seconds before the changes are published on the website).</li>
 </ul></li>
@@ -224,13 +261,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>By default the repository and the website are visible to the public. Github and the other source repositories allow to restric the access by publishing them privately. If the visualization is set to private, remember to give permission to the professor to access the webpage and the repository.</p>
+<p>By default, the repository and the website are visible to the public. Github and the other source repositories allow to restric the access by publishing them privately. If the visualization is set to private, remember to give permission to the professor to access the webpage and the repository.</p>
 </div>
 </div>
 </section>
 <section id="repository-structure" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="repository-structure"><span class="header-section-number">2.3</span> Repository structure</h3>
-<p>In this section, we describe the structure of the JKAN template repository that Datascientia provides to set up a new catalog. Below, we describe the most important elements for the course.</p>
+<p>In this section, we describe the structure of the JKAN template repository that Datascientia provides to set up a new catalog. Below, we describe the most important elements for this course.</p>
 <ul>
 <li><code>_data</code> : this directory contains the yml configuration files used to define the metadata of the resources handled by the catalog (within the “schemas” directory), as well as the categories that can be used to categorize the resources in the catalogs, and the customs services which can accessed to the catalog.</li>
 <li><code>_datasets</code> : this directory stores the markdown file describing (following a precise metadata schema) each dataset uploaded in the catalog.</li>
@@ -250,27 +287,27 @@ Note
 <section id="sec-add-organization" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="sec-add-organization"><span class="header-section-number">2.4</span> Add a new organization (you)</h3>
 <p>The organization is the individual or the entity (the owner usually) that has uploaded datasets in the catalog. In LiveMe, the organization uploading the data is the owner of the personal catalog.</p>
-<p>To add yourself as an organization in the catalog follow these steps.</p>
+<p>To add yourself as an organization to the catalog follow these steps.</p>
 <ol type="1">
 <li><p>Create a new file named <code>&lt;YOUR_NAME&gt;.md</code> inside the <code>_organization</code> folder in the repository.</p>
 <p><img src="imgs/organization.png" class="img-fluid"></p></li>
 <li><p>Paste the following text and change it with your information.</p>
-<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">schema</span><span class="kw">:</span><span class="at"> default</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt;</span></span>
-<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt; is a student of the Studies on Human Behavior course of the University of Trento.</span></span>
-<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">schema</span><span class="kw">:</span><span class="at"> default</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt;</span></span>
+<span id="annotated-cell-4-4"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt; is a student of the Studies on Human Behavior course of the University of Trento.</span></span>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">Make sure that the value matches the filename.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="1">Make sure that the value matches the filename.</span>
 </dd>
 </dl></li>
 <li><p>After a few seconds, the created organization is visible on the website. All dataset metadata that you upload will belog to this organization.</p></li>
 </ol>
 </section>
-<section id="add-a-new-dataset-metadata" class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="add-a-new-dataset-metadata"><span class="header-section-number">2.5</span> Add a new dataset metadata</h3>
+<section id="add-manually-a-new-dataset-metadata" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="add-manually-a-new-dataset-metadata"><span class="header-section-number">2.5</span> Add manually a new dataset metadata</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -281,36 +318,36 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Do not upload the actual data (sensor data or answer to the questions) in the catalog repository. This data must be kept on your device and the provided storage.</p>
+<p>Do not upload the actual data (sensor data or answer to the questions) in the catalog repository. This data must be kept on your device and the storage provided.</p>
 </div>
 </div>
 <p>To a new dataset, you need to create a new markdown file containing the metadata that describe the dataset. The metadata follows a defined schema (see <code>_data/schemas/default.yml</code>).</p>
 <ol type="1">
 <li><p>Create a new file named <code>&lt;DATASET_NAME&gt;.md</code> inside the <code>_datasets</code> folder in the repository (similarly to <a href="#sec-add-organization" class="quarto-xref">Section&nbsp;2.4</a>).</p></li>
 <li><p>Paste the following text and change with your information.</p>
-<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">schema</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> First dataset</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">organization</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt;</span></span>
-<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">notes</span><span class="kw">:</span><span class="at"> This is my first dataset on my new JKAN catalog</span></span>
-<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">resources</span><span class="kw">:</span></span>
-<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Air Monitoring Stations CSV</span></span>
-<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">        url</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
-<span id="annotated-cell-4-9"><a href="#annotated-cell-4-9" aria-hidden="true" tabindex="-1"></a>            http://data.phl.opendata.arcgis.com/datasets/1839b35258604422b0b520cbb668df0d_0.csv</span>
-<span id="annotated-cell-4-10"><a href="#annotated-cell-4-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">format</span><span class="kw">:</span><span class="at"> csv</span></span>
-<span id="annotated-cell-4-11"><a href="#annotated-cell-4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span><span class="kw">:</span><span class="at"> </span><span class="st">'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/'</span></span>
-<span id="annotated-cell-4-12"><a href="#annotated-cell-4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">category</span><span class="kw">:</span></span>
-<span id="annotated-cell-4-13"><a href="#annotated-cell-4-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> Personal data</span></span>
-<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span></span>
-<span id="annotated-cell-4-15"><a href="#annotated-cell-4-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> Documentation</span></span>
-<span id="annotated-cell-4-16"><a href="#annotated-cell-4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">maintainer</span><span class="kw">:</span><span class="at"> Tim Wisniewski</span></span>
-<span id="annotated-cell-4-17"><a href="#annotated-cell-4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">maintainer_email</span><span class="kw">:</span><span class="at"> tim@timwis.com</span></span>
-<span id="annotated-cell-4-18"><a href="#annotated-cell-4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> parquet</span></span>
-<span id="annotated-cell-4-19"><a href="#annotated-cell-4-19" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-5"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">schema</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> First dataset</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-5-4" class="code-annotation-target"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">organization</span><span class="kw">:</span><span class="at"> &lt;YOUR_NAME&gt;</span></span>
+<span id="annotated-cell-5-5"><a href="#annotated-cell-5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">notes</span><span class="kw">:</span><span class="at"> This is my first dataset on my new JKAN catalog</span></span>
+<span id="annotated-cell-5-6"><a href="#annotated-cell-5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">resources</span><span class="kw">:</span></span>
+<span id="annotated-cell-5-7"><a href="#annotated-cell-5-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Air Monitoring Stations CSV</span></span>
+<span id="annotated-cell-5-8"><a href="#annotated-cell-5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">        url</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9" aria-hidden="true" tabindex="-1"></a>            http://data.phl.opendata.arcgis.com/datasets/1839b35258604422b0b520cbb668df0d_0.csv</span>
+<span id="annotated-cell-5-10"><a href="#annotated-cell-5-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">format</span><span class="kw">:</span><span class="at"> csv</span></span>
+<span id="annotated-cell-5-11"><a href="#annotated-cell-5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span><span class="kw">:</span><span class="at"> </span><span class="st">'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/'</span></span>
+<span id="annotated-cell-5-12"><a href="#annotated-cell-5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">category</span><span class="kw">:</span></span>
+<span id="annotated-cell-5-13"><a href="#annotated-cell-5-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> Personal data</span></span>
+<span id="annotated-cell-5-14"><a href="#annotated-cell-5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span></span>
+<span id="annotated-cell-5-15"><a href="#annotated-cell-5-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> Documentation</span></span>
+<span id="annotated-cell-5-16"><a href="#annotated-cell-5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">maintainer</span><span class="kw">:</span><span class="at"> Tim Wisniewski</span></span>
+<span id="annotated-cell-5-17"><a href="#annotated-cell-5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">maintainer_email</span><span class="kw">:</span><span class="at"> tim@timwis.com</span></span>
+<span id="annotated-cell-5-18"><a href="#annotated-cell-5-18" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> parquet</span></span>
+<span id="annotated-cell-5-19"><a href="#annotated-cell-5-19" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="1">Make sure that the organization name matches the name you defined in <a href="#sec-add-organization" class="quarto-xref">Section&nbsp;2.4</a>.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="4" data-code-annotation="1">Make sure that the organization name matches the name you defined in <a href="#sec-add-organization" class="quarto-xref">Section&nbsp;2.4</a>.</span>
 </dd>
 </dl></li>
 </ol>
@@ -330,53 +367,22 @@ Important
 <ol start="3" type="1">
 <li>After a few seconds, the dataset is visible on the website.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The data processing pipeline on your personal data automatically generate these files in the <code>todo FOLDER</code>. You just need to add them in the <code>_datasets</code> folder.</p>
-<p>To peform a bulk upload, select <strong>Upload files</strong> inside the <code>_datasets</code> folder and follow the instructions.</p>
-<p><img src="imgs/upload_files.png" class="img-fluid"></p>
-</div>
-</div>
 </section>
-<section id="add-your-liveme-catalog-link-to-your-community-profile-optional" class="level3" data-number="2.6">
-<h3 data-number="2.6" class="anchored" data-anchor-id="add-your-liveme-catalog-link-to-your-community-profile-optional"><span class="header-section-number">2.6</span> Add your LiveMe catalog link to your community profile (optional)</h3>
+<section id="add-new-datasets-metadata-and-codebooks-a-the-end-of-the-data-preparation-pipeline" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="add-new-datasets-metadata-and-codebooks-a-the-end-of-the-data-preparation-pipeline"><span class="header-section-number">2.6</span> Add new datasets metadata and codebooks a the end of the data preparation pipeline</h3>
+<p>The data processing pipeline on your personal data automatically generates the markdown files and codebooks for each sensor collected.</p>
 <ol type="1">
-<li>Log in to your <a href="https://ds.datascientia.eu/community/welcome">Datascientia profile</a></li>
-<li>Navigate to <strong>Profile settings</strong> on the left side bar and update the <strong>Profile Bio</strong> in the <strong>Manage profile</strong> tab by appending the following text:</li>
+<li>The markdown files are gerated in <code>experiments/shb/docs/markdowns</code>. You just need to upload all the files inside the <code>_datasets</code> folder in the repository. To perform a bulk upload, navigate to the <code>_datasets</code> folder in you repository <code>https://github.com/&lt;GITHUB_USERNAME&gt;/liveme</code> and select <strong>Upload files</strong> inside. Then, follow the instructions.</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>My personal Data Catalog</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>- LiveMe https://github.com/&lt;GITHUB_USERNAME&gt;/liveme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can also format <strong>LiveMe</strong> as a link.</p>
-<p><img src="imgs/adding_removing_catalog_links_in_user_profile.png" class="img-fluid"></p>
-<ol start="3" type="1">
-<li>Your changes will be then visible in the <strong>About</strong> section of your public profile.</li>
+<p><img src="imgs/upload_files.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><p>The codebooks are stored inside <code>experiments/shb/docs/codebooks</code>. Upload all the files in the <code>documentation/codebooks</code> folder inside the repository as described in the previous point.</p></li>
+<li><p>After a few seconds, the changes are visible on the website. I the following icon is visible in the repository, the website is not yet ready.</p></li>
 </ol>
-<p><img src="imgs/link_personal_profile.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Do not add link or information that you do not wish to share publicly.</p>
-</div>
-</div>
+<p><img src="imgs/building_icon.png" class="img-fluid"></p>
 </section>
-</section>
-<section id="references" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="references"><span class="header-section-number">3</span> References</h2>
+<section id="references-1" class="level3" data-number="2.7">
+<h3 data-number="2.7" class="anchored" data-anchor-id="references-1"><span class="header-section-number">2.7</span> References</h3>
 <ul>
 <li><a href="https://datascientiafoundation.github.io/LiveData/build_catalog/">DS Catalog: Development and Maintenance</a></li>
 <li><a href="https://ds.datascientia.eu/community/public/your-public-portfolio">Personal Datascientia Public Portfolio</a></li>
@@ -384,6 +390,7 @@ Warning
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
